@@ -56,17 +56,17 @@ class ViewController: UIViewController {
 //        }
 
         // Patch, Minor, Migor 순서대로 비교
-//        var isUpdate = false
-//
-//        for i in (0..<3).reversed() {
-//            guard let s = Int(serverVersion[i]), let a = Int(appVersion[i]) else {
-//                continue
-//            }
-//
-//            checkVersion(server: s, app: a, isUpdate: &isUpdate)
-//        }
-//
-//        resultLabel.text = "\(isUpdate)"
+        var isUpdate = false
+
+        for i in (0..<3).reversed() {
+            guard let s = Int(serverVersion[i]), let a = Int(appVersion[i]) else {
+                continue
+            }
+
+            checkVersion(server: s, app: a, isUpdate: &isUpdate)
+        }
+
+        resultLabel.text = "\(isUpdate)"
     }
     
     func checkVersion(server: Int, app: Int, isUpdate: inout Bool) {
