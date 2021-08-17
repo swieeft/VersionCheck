@@ -59,11 +59,11 @@ class ViewController: UIViewController {
         var isUpdate = false
 
         for i in (0..<3).reversed() {
-            guard let s = Int(serverVersion[i]), let a = Int(appVersion[i]) else {
+            guard let server = Int(serverVersion[i]), let app = Int(appVersion[i]) else {
                 continue
             }
 
-            checkVersion(server: s, app: a, isUpdate: &isUpdate)
+            checkVersion(server: server, app: app, isUpdate: &isUpdate)
         }
 
         resultLabel.text = "\(isUpdate)"
